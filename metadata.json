@@ -1,0 +1,6 @@
+{
+  "name": "Threat Analyze",
+  "description": "AI-Powered URL, Domain & Threat Intelligence Cybersecurity Platform",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

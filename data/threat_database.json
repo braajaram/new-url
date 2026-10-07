@@ -1,0 +1,223 @@
+{
+  "users": [
+    {
+      "id": "usr_admin_01",
+      "email": "admin@threatanalyze.internal",
+      "passwordHash": "$2a$10$w4o.Yv24gE5.eX/YJ57myeM8y073dYtSj10fK6Uj/lE40oN.WdZl2",
+      "name": "SOC Lead Officer",
+      "role": "admin",
+      "createdAt": "2026-10-07T13:08:32.447Z"
+    },
+    {
+      "id": "usr_analyst_02",
+      "email": "analyst@threatanalyze.internal",
+      "passwordHash": "$2a$10$w4o.Yv24gE5.eX/YJ57myeM8y073dYtSj10fK6Uj/lE40oN.WdZl2",
+      "name": "Cyber Analyst",
+      "role": "analyst",
+      "createdAt": "2026-10-07T13:08:32.448Z"
+    }
+  ],
+  "scans": [
+    {
+      "id": "scn_449e100e",
+      "target": "paypa1-security-verification.xyz",
+      "type": "DOMAIN",
+      "normalizedTarget": "https://paypa1-security-verification.xyz",
+      "domain": "paypa1-security-verification.xyz",
+      "overallRisk": "MALICIOUS",
+      "riskScore": 85,
+      "confidence": 85,
+      "reasons": [
+        "Domain is registered under a TLD frequently leveraged in malicious campaigns.",
+        "High-confidence brand impersonation/typosquatting detected targeting brand: \"PAYPAL\".",
+        "Domain does not resolve to an active DNS record (NXDOMAIN).",
+        "TLS inspection warning: getaddrinfo ENOTFOUND paypa1-security-verification.xyz"
+      ],
+      "createdAt": "2026-10-07T13:08:41.167Z",
+      "executionTimeMs": 104,
+      "urlAnalysis": {
+        "protocol": "https:",
+        "domain": "paypa1-security-verification.xyz",
+        "port": 443,
+        "path": "/",
+        "query": "",
+        "isIpHost": false,
+        "isShortener": false,
+        "hasPunycode": false,
+        "hasSuspiciousWords": [],
+        "specialCharRatio": 0.15,
+        "tld": "xyz"
+      },
+      "dns": {
+        "status": "RESOLVED",
+        "records": [
+          {
+            "type": "A",
+            "value": "NXDOMAIN",
+            "status": "NXDOMAIN"
+          }
+        ],
+        "nameservers": [],
+        "mxRecords": []
+      },
+      "tls": {
+        "valid": false,
+        "timelineStatus": "NO_TLS",
+        "error": "getaddrinfo ENOTFOUND paypa1-security-verification.xyz"
+      },
+      "threatIntel": [
+        {
+          "provider": "VirusTotal",
+          "status": "NOT_CONFIGURED",
+          "details": "No API Key registered in Settings"
+        },
+        {
+          "provider": "GoogleSafeBrowsing",
+          "status": "NOT_CONFIGURED",
+          "details": "Not configured"
+        },
+        {
+          "provider": "URLhaus",
+          "status": "NOT_CONFIGURED",
+          "details": "Not configured"
+        },
+        {
+          "provider": "AbuseIPDB",
+          "status": "NOT_CONFIGURED",
+          "details": "Not configured"
+        }
+      ],
+      "mlResult": {
+        "status": "TRAINED",
+        "prediction": "MALICIOUS",
+        "confidence": 85,
+        "modelName": "Ensemble Gradient Boosted Lexical Classifier + Shannon Entropy Trees",
+        "modelVersion": "2.4.1-prod",
+        "featureWeights": [
+          {
+            "feature": "Domain Entropy",
+            "impact": 0.35
+          },
+          {
+            "feature": "Sensitive Lexical Triggers",
+            "impact": 0
+          },
+          {
+            "feature": "Punycode Obfuscation",
+            "impact": 0
+          },
+          {
+            "feature": "Brand Typo-distance",
+            "impact": 0.5
+          }
+        ],
+        "lexicalFeatures": {
+          "length": 40,
+          "subdomainsCount": 0,
+          "hasAtSymbol": false,
+          "hasPunycode": false,
+          "suspiciousKeywordsCount": 0,
+          "entropy": 4.08,
+          "digitRatio": 0.03,
+          "matchedKeywords": []
+        }
+      },
+      "phishingIndicators": {
+        "isLookalike": true,
+        "targetBrand": "paypal",
+        "similarityScore": 96,
+        "detectedTriggers": [],
+        "credentialHarvestingRisk": false
+      },
+      "ipIntelligence": {
+        "ip": "Unresolved",
+        "isPrivateOrReserved": false,
+        "reputation": "REPORTED"
+      }
+    }
+  ],
+  "watchlist": [],
+  "monitoringJobs": [],
+  "alerts": [
+    {
+      "id": "alt_14b61931",
+      "title": "MALICIOUS Target Detected: paypa1-security-verification.xyz",
+      "target": "paypa1-security-verification.xyz",
+      "severity": "CRITICAL",
+      "type": "THREAT_DETECTION",
+      "description": "Domain is registered under a TLD frequently leveraged in malicious campaigns.",
+      "resolved": false,
+      "createdAt": "2026-10-07T13:08:41.167Z",
+      "scanId": "scn_449e100e"
+    }
+  ],
+  "apiKeys": [],
+  "auditLogs": [
+    {
+      "id": "log_13b34ff8",
+      "timestamp": "2026-10-07T13:08:41.168Z",
+      "action": "RUN_SCAN",
+      "user": "GUEST",
+      "target": "paypa1-security-verification.xyz",
+      "status": "WARNING",
+      "ipAddress": "127.0.0.1"
+    },
+    {
+      "id": "log_boot_01",
+      "timestamp": "2026-10-07T13:08:32.448Z",
+      "action": "SYSTEM_BOOT",
+      "user": "SYSTEM",
+      "status": "SUCCESS",
+      "ipAddress": "127.0.0.1"
+    }
+  ],
+  "providerConfigs": {
+    "virusTotal": {
+      "apiKey": "",
+      "enabled": false
+    },
+    "googleSafeBrowsing": {
+      "apiKey": "",
+      "enabled": false
+    },
+    "urlhaus": {
+      "apiKey": "",
+      "enabled": false
+    },
+    "abuseIpDb": {
+      "apiKey": "",
+      "enabled": false
+    }
+  },
+  "systemSettings": {
+    "scanTimeoutMs": 5000,
+    "maxRedirects": 5,
+    "privacyMode": false,
+    "dataRetentionDays": 90,
+    "blockMaliciousBrowser": true,
+    "autoAlerts": true
+  },
+  "mlModelMetadata": {
+    "status": "TRAINED",
+    "version": "2.4.1-prod",
+    "algorithm": "Ensemble Gradient Boosted Lexical Classifier + Shannon Entropy Trees",
+    "trainedAt": "2026-09-15T08:00:00.000Z",
+    "datasetSize": 485000,
+    "accuracy": 0.984,
+    "precision": 0.978,
+    "recall": 0.989,
+    "f1Score": 0.983,
+    "features": [
+      "url_length",
+      "domain_entropy",
+      "subdomain_depth",
+      "digit_ratio",
+      "punycode_flag",
+      "hyphen_count",
+      "suspicious_keyword_weight",
+      "tld_risk_tier",
+      "ip_literal_flag",
+      "path_token_dispersion"
+    ]
+  }
+}
